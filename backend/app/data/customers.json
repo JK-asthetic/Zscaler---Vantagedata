@@ -1,0 +1,52 @@
+[
+  {
+    "customer_id": "C001",
+    "customer_name": "Acme Corp",
+    "name": "Acme Corp",
+    "segment": "Enterprise",
+    "region": "North America",
+    "signup_date": "2023-01-15",
+    "created_at": "2023-01-15",
+    "feature_adoption_score": 80
+  },
+  {
+    "customer_id": "C002",
+    "customer_name": "NovaTech",
+    "name": "NovaTech",
+    "segment": "Mid-Market",
+    "region": "EMEA",
+    "signup_date": "2023-03-22",
+    "created_at": "2023-03-22",
+    "feature_adoption_score": 52
+  },
+  {
+    "customer_id": "C003",
+    "customer_name": "BluePeak",
+    "name": "BluePeak",
+    "segment": "SMB",
+    "region": "APAC",
+    "signup_date": "2023-05-10",
+    "created_at": "2023-05-10",
+    "feature_adoption_score": 20
+  },
+  {
+    "customer_id": "C004",
+    "customer_name": "GreenLeaf",
+    "name": "GreenLeaf",
+    "segment": "Enterprise",
+    "region": "North America",
+    "signup_date": "2023-06-18",
+    "created_at": "2023-06-18",
+    "feature_adoption_score": 91
+  },
+  {
+    "customer_id": "C005",
+    "customer_name": "OrbitAI",
+    "name": "OrbitAI",
+    "segment": "Mid-Market",
+    "region": "APAC",
+    "signup_date": "2023-09-01",
+    "created_at": "2023-09-01",
+    "feature_adoption_score": 60
+  }
+]

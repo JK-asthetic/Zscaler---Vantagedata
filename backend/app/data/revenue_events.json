@@ -1,0 +1,37 @@
+[
+  {
+    "event_id": "R001",
+    "customer_id": "C001",
+    "event_date": "2024-01-01",
+    "event_type": "new",
+    "amount": 12000.0
+  },
+  {
+    "event_id": "R002",
+    "customer_id": "C002",
+    "event_date": "2024-03-01",
+    "event_type": "expansion",
+    "amount": 1500.0
+  },
+  {
+    "event_id": "R003",
+    "customer_id": "C003",
+    "event_date": "2024-04-01",
+    "event_type": "churn",
+    "amount": -900.0
+  },
+  {
+    "event_id": "R004",
+    "customer_id": "C004",
+    "event_date": "2024-02-01",
+    "event_type": "expansion",
+    "amount": 3000.0
+  },
+  {
+    "event_id": "R005",
+    "customer_id": "C005",
+    "event_date": "2024-03-15",
+    "event_type": "contraction",
+    "amount": -700.0
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "customer_id": "C001",
+    "month": "2024-01",
+    "active_users": 120,
+    "logins": 2400,
+    "feature_adoption_score": 82
+  },
+  {
+    "customer_id": "C001",
+    "month": "2024-02",
+    "active_users": 118,
+    "logins": 2300,
+    "feature_adoption_score": 80
+  },
+  {
+    "customer_id": "C002",
+    "month": "2024-01",
+    "active_users": 75,
+    "logins": 1200,
+    "feature_adoption_score": 61
+  },
+  {
+    "customer_id": "C002",
+    "month": "2024-02",
+    "active_users": 60,
+    "logins": 900,
+    "feature_adoption_score": 52
+  },
+  {
+    "customer_id": "C003",
+    "month": "2024-01",
+    "active_users": 25,
+    "logins": 300,
+    "feature_adoption_score": 35
+  },
+  {
+    "customer_id": "C003",
+    "month": "2024-02",
+    "active_users": 10,
+    "logins": 90,
+    "feature_adoption_score": 20
+  },
+  {
+    "customer_id": "C004",
+    "month": "2024-01",
+    "active_users": 150,
+    "logins": 3100,
+    "feature_adoption_score": 88
+  },
+  {
+    "customer_id": "C004",
+    "month": "2024-02",
+    "active_users": 165,
+    "logins": 3400,
+    "feature_adoption_score": 91
+  },
+  {
+    "customer_id": "C005",
+    "month": "2024-01",
+    "active_users": 80,
+    "logins": 1400,
+    "feature_adoption_score": 67
+  },
+  {
+    "customer_id": "C005",
+    "month": "2024-02",
+    "active_users": 76,
+    "logins": 1300,
+    "feature_adoption_score": 60
+  }
+]

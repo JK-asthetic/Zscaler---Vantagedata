@@ -1,0 +1,52 @@
+[
+  {
+    "subscription_id": "S001",
+    "customer_id": "C001",
+    "plan": "Enterprise",
+    "plan_tier": "Enterprise",
+    "mrr": 12000.0,
+    "monthly_recurring_revenue": 12000.0,
+    "start_date": "2023-01-15",
+    "status": "active"
+  },
+  {
+    "subscription_id": "S002",
+    "customer_id": "C002",
+    "plan": "Growth",
+    "plan_tier": "Growth",
+    "mrr": 4500.0,
+    "monthly_recurring_revenue": 4500.0,
+    "start_date": "2023-03-22",
+    "status": "active"
+  },
+  {
+    "subscription_id": "S003",
+    "customer_id": "C003",
+    "plan": "Starter",
+    "plan_tier": "Starter",
+    "mrr": 900.0,
+    "monthly_recurring_revenue": 900.0,
+    "start_date": "2023-05-10",
+    "status": "churned"
+  },
+  {
+    "subscription_id": "S004",
+    "customer_id": "C004",
+    "plan": "Enterprise",
+    "plan_tier": "Enterprise",
+    "mrr": 15000.0,
+    "monthly_recurring_revenue": 15000.0,
+    "start_date": "2023-06-18",
+    "status": "active"
+  },
+  {
+    "subscription_id": "S005",
+    "customer_id": "C005",
+    "plan": "Growth",
+    "plan_tier": "Growth",
+    "mrr": 5200.0,
+    "monthly_recurring_revenue": 5200.0,
+    "start_date": "2023-09-01",
+    "status": "active"
+  }
+]

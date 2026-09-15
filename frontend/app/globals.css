@@ -1,0 +1,398 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-display: 'Syne', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+html.dark, html.dark body {
+  background-color: #000000 !important;
+  color: #ffffff;
+}
+
+html.light, html.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a;
+}
+
+/* Light Theme Component Overrides */
+html.light .bg-black,
+html.light .bg-black\/95,
+html.light .bg-black\/80,
+html.light .bg-black\/75,
+html.light .bg-black\/70,
+html.light .bg-black\/60,
+html.light .bg-black\/50,
+html.light .bg-black\/40 {
+  background-color: #ffffff !important;
+}
+
+/* Code and Pre blocks in Light Mode */
+html.light pre {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light pre code {
+  color: #0f172a !important;
+}
+
+html.light code:not(pre code) {
+  background-color: #f1f5f9 !important;
+  color: #0f766e !important;
+  border-color: #cbd5e1 !important;
+}
+
+
+html.light .bg-zinc-950,
+html.light .bg-zinc-950\/90,
+html.light .bg-zinc-950\/80,
+html.light .bg-zinc-950\/70,
+html.light .bg-zinc-950\/60 {
+  background-color: #f8fafc !important;
+}
+
+html.light .bg-zinc-900,
+html.light .bg-zinc-900\/95,
+html.light .bg-zinc-900\/90,
+html.light .bg-zinc-900\/80,
+html.light .bg-zinc-900\/60,
+html.light .bg-zinc-900\/50,
+html.light .bg-zinc-900\/40,
+html.light .bg-zinc-900\/30 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .bg-zinc-800,
+html.light .bg-zinc-800\/80,
+html.light .bg-zinc-800\/60 {
+  background-color: #e2e8f0 !important;
+}
+
+/* Borders & Dividers */
+html.light .border-zinc-900,
+html.light .border-zinc-800,
+html.light .border-zinc-800\/80,
+html.light .border-zinc-800\/60,
+html.light .border-zinc-700,
+html.light .border-zinc-700\/80 {
+  border-color: #e2e8f0 !important;
+}
+
+html.light .divide-zinc-900 > :not([hidden]) ~ :not([hidden]),
+html.light .divide-zinc-800 > :not([hidden]) ~ :not([hidden]),
+html.light .divide-zinc-700 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e2e8f0 !important;
+}
+
+/* Text Colors */
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-zinc-100,
+html.light .text-zinc-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-zinc-300 {
+  color: #334155 !important;
+}
+
+html.light .text-zinc-400 {
+  color: #64748b !important;
+}
+
+html.light .text-zinc-500 {
+  color: #64748b !important;
+}
+
+html.light .text-zinc-600 {
+  color: #94a3b8 !important;
+}
+
+/* Accent Badges in Light Mode */
+html.light .bg-emerald-950,
+html.light .bg-emerald-950\/70,
+html.light .bg-emerald-950\/60,
+html.light .bg-emerald-950\/40 {
+  background-color: #ecfdf5 !important;
+  color: #047857 !important;
+  border-color: #a7f3d0 !important;
+}
+
+html.light .bg-cyan-950,
+html.light .bg-cyan-950\/80,
+html.light .bg-cyan-950\/70,
+html.light .bg-cyan-950\/60 {
+  background-color: #ecfeff !important;
+  color: #0e7490 !important;
+  border-color: #a5f3fc !important;
+}
+
+html.light .bg-purple-950,
+html.light .bg-purple-950\/70,
+html.light .bg-purple-950\/50,
+html.light .bg-purple-950\/20 {
+  background-color: #f5f3ff !important;
+  color: #6d28d9 !important;
+  border-color: #ddd6fe !important;
+}
+
+html.light .bg-amber-950,
+html.light .bg-amber-950\/70,
+html.light .bg-amber-950\/60,
+html.light .bg-amber-950\/20 {
+  background-color: #fffbeb !important;
+  color: #b45309 !important;
+  border-color: #fde68a !important;
+}
+
+html.light .bg-blue-950,
+html.light .bg-blue-950\/70,
+html.light .bg-blue-950\/60 {
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border-color: #bfdbfe !important;
+}
+
+html.light .bg-red-950,
+html.light .bg-red-950\/70,
+html.light .bg-red-950\/40 {
+  background-color: #fef2f2 !important;
+  color: #b91c1c !important;
+  border-color: #fecaca !important;
+}
+
+html.light .text-emerald-400,
+html.light .text-emerald-300 {
+  color: #059669 !important;
+}
+
+html.light .text-cyan-400,
+html.light .text-cyan-300 {
+  color: #0284c7 !important;
+}
+
+html.light .text-amber-400,
+html.light .text-amber-300 {
+  color: #d97706 !important;
+}
+
+html.light .text-purple-400,
+html.light .text-purple-300 {
+  color: #7c3aed !important;
+}
+
+/* Data Table in Light Mode */
+html.light table {
+  background-color: #ffffff !important;
+}
+
+html.light thead {
+  background-color: #f1f5f9 !important;
+  border-bottom: 2px solid #cbd5e1 !important;
+}
+
+html.light thead th {
+  color: #334155 !important;
+  background-color: #f1f5f9 !important;
+  border-right-color: #e2e8f0 !important;
+  border-bottom-color: #cbd5e1 !important;
+}
+
+html.light thead th span {
+  color: #334155 !important;
+}
+
+html.light thead th span.bg-zinc-800 {
+  background-color: #e2e8f0 !important;
+  color: #475569 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+html.light tbody tr {
+  background-color: #ffffff !important;
+}
+
+html.light tbody tr:nth-child(even) {
+  background-color: #f8fafc !important;
+}
+
+html.light tbody tr:hover {
+  background-color: #f1f5f9 !important;
+}
+
+html.light tbody td {
+  color: #0f172a !important;
+  border-right-color: #e2e8f0 !important;
+}
+
+html.light tbody td.text-zinc-600 {
+  color: #64748b !important;
+}
+
+/* Inputs & Form Controls */
+html.light input[type="text"],
+html.light select {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light input[type="text"]::placeholder {
+  color: #94a3b8 !important;
+}
+
+html.light select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html.light .hero-grid-pattern {
+  background-color: #f8fafc !important;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+html.light .hero-grid-pattern::after {
+  background: radial-gradient(circle at 50% 35%, transparent 20%, #f8fafc 85%) !important;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+button {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+input {
+  outline: none;
+  font-family: inherit;
+}
+
+/* Typography */
+.font-display {
+  font-family: var(--font-display) !important;
+  letter-spacing: -0.02em;
+}
+
+.font-body {
+  font-family: var(--font-body) !important;
+}
+
+.font-mono {
+  font-family: var(--font-mono) !important;
+}
+
+/* Xtron Hero Grid Pattern */
+.hero-grid-pattern {
+  background-color: #000000;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  position: relative;
+}
+
+.hero-grid-pattern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 35%, transparent 20%, #000000 85%);
+  pointer-events: none;
+}
+
+.grid-glow-cell {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #070709;
+}
+::-webkit-scrollbar-thumb {
+  background: #22222a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #383844;
+}
+
+/* Status Pill */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  color: #d4d4d8;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.3; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes wireDash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.animate-wire-dash {
+  animation: wireDash 1.2s linear infinite;
+}
+
