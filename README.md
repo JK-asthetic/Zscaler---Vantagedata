@@ -1,6 +1,5 @@
 # VantageData v2.0 — AI-Powered Multi-Table Intelligence
 
-[![VantageData Architecture](./architecture_diagram.jpg)](./architecture_diagram.jpg)
 
 **VantageData** is a production-grade enterprise AI Data Analyst agent that enables business users to query, analyze, and visualize complex multi-table datasets using natural language. 
 
