@@ -1,9 +1,10 @@
 import React from "react";
+import Link from "next/link";
 import { ArrowRight, Check, Database } from "lucide-react";
 import { AgentCanvas } from "@/components/agent/AgentCanvas";
 
 interface LandingHeroProps {
-  onLaunchWorkspace: () => void;
+  onLaunchWorkspace?: () => void;
 }
 
 export const LandingHero: React.FC<LandingHeroProps> = ({ onLaunchWorkspace }) => {
@@ -51,22 +52,20 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onLaunchWorkspace }) =
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mb-16">
-          <button
-            type="button"
-            onClick={onLaunchWorkspace}
+          <Link
+            href="/chatbot"
             className="bg-white hover:bg-zinc-200 text-black font-semibold rounded-lg px-8 py-3.5 text-sm flex items-center gap-2 transition-all shadow-xl shadow-white/5 cursor-pointer"
           >
             <span>Start for free</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
-          <button
-            type="button"
-            onClick={onLaunchWorkspace}
+          </Link>
+          <Link
+            href="/chatbot"
             className="bg-zinc-950 hover:bg-zinc-900 text-white font-semibold border border-zinc-800 rounded-lg px-8 py-3.5 text-sm flex items-center gap-2 transition-all cursor-pointer"
           >
             <Database className="w-4 h-4 text-cyan-400" />
             <span>View demo</span>
-          </button>
+          </Link>
         </div>
 
         {/* Feature Highlights Row */}
@@ -106,13 +105,13 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ onLaunchWorkspace }) =
             </div>
 
             <div className="flex items-center gap-3">
-              <a
+              <Link
                 href="/agent"
                 className="px-4 py-2 rounded-lg bg-orange-600 hover:bg-orange-500 text-white font-semibold text-xs transition-all flex items-center gap-1.5 shadow-lg shadow-orange-600/20 cursor-pointer"
               >
                 <span>Full-Screen Studio</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect, useMemo } from "react";
 import {
   Menu,
   Plus,
-  Bell,
   Send,
   Sparkles,
   ChevronRight,
@@ -11,14 +10,12 @@ import {
   AlertCircle,
   UploadCloud,
   Database,
-  Sun,
-  Moon,
 } from "lucide-react";
 import { ChatMessage, DisplayMessage, ChatResponse } from "@/types";
 import { MessageBubble } from "@/components/MessageBubble";
 import { DataTableViewer } from "@/components/DataTableViewer";
+import { Navbar } from "@/components/Navbar";
 import { sendChatMessage, listTables } from "@/lib/api";
-import { useTheme } from "@/context/ThemeContext";
 
 interface WorkspaceProps {
   onBackToLanding?: () => void;
@@ -49,7 +46,6 @@ const INITIAL_GREETING: DisplayMessage = {
 };
 
 export const Workspace: React.FC<WorkspaceProps> = ({ onBackToLanding }) => {
-  const { theme, toggleTheme } = useTheme();
   const [promptCategory, setPromptCategory] = useState<"assessment" | "table">("assessment");
   const [isChatPanelCollapsed, setIsChatPanelCollapsed] = useState<boolean>(false);
   const [isUploadModalOpen, setIsUploadModalOpen] = useState<boolean>(false);
@@ -180,105 +176,22 @@ export const Workspace: React.FC<WorkspaceProps> = ({ onBackToLanding }) => {
 
   return (
     <div className="flex flex-col h-screen w-full bg-black text-zinc-100 overflow-hidden font-body">
-      {/* Top Workspace Header */}
-      <header className="h-12 border-b border-zinc-800 bg-zinc-950 px-4 flex items-center justify-between flex-shrink-0 z-20">
-        <div className="flex items-center gap-3">
-          <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-xs font-mono shadow-sm">
-            VD
-          </div>
-          <span className="font-display font-extrabold text-sm tracking-tight text-white">
-            VantageData
-          </span>
-          <span className="px-2 py-0.5 rounded-full bg-blue-950/70 text-blue-300 border border-blue-800/60 text-[10px] font-mono font-semibold hidden sm:inline">
-            Enterprise AI Workspace
-          </span>
-        </div>
-
-        {/* Center Status Indicators */}
-        <div className="hidden lg:flex items-center gap-5 text-xs font-mono">
-          <span className="flex items-center gap-1.5 text-zinc-400">
-            <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>Network ready</span>
-          </span>
-          <span className="flex items-center gap-1.5 text-zinc-400">
-            <span className="w-2 h-2 rounded-full bg-cyan-400" />
-            <span>{tablesList.length} Datasets in Registry</span>
-          </span>
-          <span className="flex items-center gap-1.5 text-zinc-400">
-            <span className="w-2 h-2 rounded-full bg-amber-400" />
-            <span>Audit pass active</span>
-          </span>
-        </div>
-
-        {/* Right Actions */}
-        <div className="flex items-center gap-2.5">
-          {onBackToLanding && (
-            <button
-              type="button"
-              onClick={onBackToLanding}
-              className="text-xs text-zinc-400 hover:text-white px-2.5 py-1 rounded bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 transition-colors cursor-pointer"
-            >
-              Landing View
-            </button>
-          )}
-
-          <a
-            href="/agent"
-            className="text-xs font-semibold px-2.5 py-1 rounded-md bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200 dark:bg-orange-950/40 dark:hover:bg-orange-900/60 dark:text-orange-300 dark:border-orange-800/60 transition-colors flex items-center gap-1.5 shadow-sm cursor-pointer"
-            title="Open Interactive n8n Agent Flow Studio"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-orange-500 dark:bg-orange-400 animate-pulse" />
-            <span>Agent Flow (n8n)</span>
-          </a>
-
+      {/* Clean Unified Top Navbar */}
+      <Navbar
+        rightSlot={
           <button
             type="button"
             onClick={() => setIsUploadModalOpen(true)}
-            className="bg-zinc-900 hover:bg-zinc-800 text-cyan-300 border border-cyan-800/80 hover:border-cyan-700 font-semibold rounded-md px-3 py-1.5 text-xs flex items-center gap-1.5 transition-colors cursor-pointer shadow-sm"
+            className="bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-800 text-zinc-900 dark:text-cyan-300 border border-zinc-200 dark:border-cyan-800/80 font-semibold rounded-md px-3 py-1.5 text-xs flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
           >
-            <UploadCloud className="w-3.5 h-3.5 text-cyan-400" />
+            <UploadCloud className="w-3.5 h-3.5 text-cyan-500 dark:text-cyan-400" />
             <span>Upload Dataset</span>
           </button>
-
-          <button
-            type="button"
-            onClick={() => handleSendMessage("Give me an executive summary of our business metrics across all tables.")}
-            className="bg-zinc-900 hover:bg-zinc-800 text-white dark:bg-white dark:hover:bg-zinc-200 dark:text-black font-semibold rounded-md px-3 py-1.5 text-xs flex items-center gap-1.5 transition-colors cursor-pointer shadow-sm hidden sm:flex border border-zinc-700 dark:border-transparent"
-          >
-            <Plus className="w-3.5 h-3.5" />
-            <span>Query All Data</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-            className="p-1.5 rounded-md text-zinc-400 hover:text-white hover:bg-zinc-900 border border-transparent hover:border-zinc-800 transition-colors cursor-pointer flex items-center justify-center"
-            title={`Switch to ${theme === "dark" ? "Light" : "Dark"} Mode`}
-          >
-            {theme === "dark" ? (
-              <Sun className="w-4 h-4 text-amber-400" />
-            ) : (
-              <Moon className="w-4 h-4 text-indigo-600" />
-            )}
-          </button>
-
-          <button
-            type="button"
-            className="relative p-1.5 text-zinc-400 hover:text-white hover:bg-zinc-900 rounded-md cursor-pointer"
-          >
-            <Bell className="w-4 h-4" />
-            <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-blue-500" />
-          </button>
-
-          <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-[11px]">
-            G
-          </div>
-        </div>
-      </header>
+        }
+      />
 
       {/* Workspace Body: Center Data Viewer + Right Synchronized AI Analyst */}
-      <div className="flex flex-1 overflow-hidden h-[calc(100vh-48px)]">
+      <div className="flex flex-1 overflow-hidden h-[calc(100vh-53px)]">
         {/* Main Panel: Data Table Explorer (Full Width, No Cramping) */}
         <main className="flex-1 flex flex-col overflow-hidden bg-black min-w-0">
           <DataTableViewer

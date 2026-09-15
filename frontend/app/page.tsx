@@ -1,28 +1,26 @@
-// Main application view separating the landing presentation from the enterprise workspace.
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { LandingHero } from "@/components/LandingHero";
-import { Workspace } from "@/components/Workspace";
 
 export default function HomePage() {
-  const [currentView, setCurrentView] = useState<"landing" | "workspace">("workspace");
-
-  if (currentView === "landing") {
-    return (
-      <div id="xtron-data-root" className="min-h-screen bg-black text-white flex flex-col selection:bg-zinc-800 selection:text-white">
-        <Navbar currentView={currentView} onSwitchView={(view) => setCurrentView(view)} />
-        <main className="flex-1 flex flex-col">
-          <LandingHero onLaunchWorkspace={() => setCurrentView("workspace")} />
-        </main>
-      </div>
-    );
-  }
-
   return (
-    <div id="xtron-data-root" className="h-screen w-screen bg-black text-white flex flex-col selection:bg-zinc-800 selection:text-white overflow-hidden">
-      <Workspace onBackToLanding={() => setCurrentView("landing")} />
+    <div id="xtron-data-root" className="min-h-screen bg-black text-white flex flex-col selection:bg-zinc-800 selection:text-white">
+      <Navbar
+        rightSlot={
+          <Link
+            href="/chatbot"
+            className="bg-white hover:bg-zinc-200 text-black font-semibold rounded-md px-3 py-1.5 text-xs transition-colors shadow-xs"
+          >
+            Launch Chatbot
+          </Link>
+        }
+      />
+      <main className="flex-1 flex flex-col">
+        <LandingHero />
+      </main>
     </div>
   );
 }
